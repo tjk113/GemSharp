@@ -10,6 +10,7 @@ Once built, you can provide a URL to a Gemini resource as a command line argumen
 ```
 
 ## TODO
+- [ ] Trust On First Use (TOFU) SSL certificate authentication
 - [ ] Viewport Rendering
   - [ ] Limit text bounds to the viewport
   - [ ] Word wrapping

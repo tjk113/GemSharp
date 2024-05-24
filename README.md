@@ -10,7 +10,7 @@ Once built, you can provide a URL to a Gemini resource as a command line argumen
 ```
 
 ## TODO
-- [ ] Fix special characters getting corrupted (presumably by UTF-8 to UTF-16 conversions)
+- [x] ~~Fix special characters getting corrupted (presumably by UTF-8 to UTF-16 conversions)~~
 - [ ] Trust On First Use (TOFU) SSL certificate authentication
 - [ ] Viewport Rendering
   - [ ] Limit text bounds to the viewport

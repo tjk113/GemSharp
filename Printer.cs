@@ -71,10 +71,11 @@ namespace GemSharp {
             string sequence = ((int)format).ToString() + ';'
                               + parsedColor.ToString() + ';'
                               + ((int)backgroundColor + 10).ToString() + 'm';
-            this.stream.Write(Encoding.ASCII.GetBytes(Printer.startSequence + sequence + text + Printer.resetSequence));
+            // `text` has to be UTF-16, as it was converted from UTF-8 right after the bytes were read
+            this.stream.Write(Encoding.Unicode.GetBytes(Printer.startSequence + sequence + text + Printer.resetSequence));
         }
 
-        public void WriteLine(string text, Format format = Format.Normal, Color color = Color.Default, Color backgroundColor = Color.Default) {
+        public void WriteLine(string text = "", Format format = Format.Normal, Color color = Color.Default, Color backgroundColor = Color.Default) {
             /* If we did the logical thing and just passed `text + "\n"` to
             `Write`, then the formatting would stretch all the way across the
             width of the line, which is a problem if using `Format.Underline`.
